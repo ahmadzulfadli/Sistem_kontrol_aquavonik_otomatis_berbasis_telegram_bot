@@ -6,11 +6,11 @@
 #include <ArduinoJson.h>
 
 //------------------------------
-const int onhourpompa=11;
-const int onminpompa=10;
+const int onhourpompa=8;
+const int onminpompa=0;
 
-const int offhourpompa=12;
-const int offminpompa=0;
+const int offhourpompa=8;
+const int offminpompa=30;
 
 const int onhourpompa1=12;
 const int onminpompa1=0;
@@ -25,11 +25,11 @@ const int offhourpompa2=17;
 const int offminpompa2=30;
 
 //------------------------------
-const int onhourpakan=11;
-const int onminpakan=20;
+const int onhourpakan=8;
+const int onminpakan=40;
 
 const int offhourpakan=11;
-const int offminpakan=25;
+const int offminpakan=45;
 
 const int onhourpakan1=12;
 const int onminpakan1=40;
@@ -234,13 +234,15 @@ void loop() {
 }
 
 void makan(){
-  analogWrite(ENA, 50);
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  delay(1000);
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);
-  delay(1000);
+  for(int i = 0; i <= 15; i++){
+    analogWrite(ENA, 255);
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    delay(1000);
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    delay(1000);
+  }
 }
 
 void stop_makan(){
