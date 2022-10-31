@@ -301,4 +301,3 @@ void handleNewMessages(int numNewMessages) {
     }     
   }
 }
-
